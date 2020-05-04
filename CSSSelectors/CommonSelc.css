@@ -1,0 +1,115 @@
+/* ////  Some Important CSS Selectors */
+/* https://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048 */
+
+
+/* for targetting all elements on page */
+* {
+    margin: 0;
+    padding: 0;
+   }
+
+   /* targetting all child element of id */
+   #container * {
+    border: 1px solid black;
+   } 
+
+   /* descendant selector */
+   li a {
+    text-decoration: none;
+  }
+
+  /* We use the :link pseudo-class to target all anchors tags which have yet to be clicked on.
+
+Alternatively, we also have the :visited pseudo class, which, as you'd expected, allows us to apply specific styling to only the anchor tags on the page which have been clicked on, or visited. */
+
+  a:link { color: red; }
+a:visted { color: purple; }
+
+/* This is referred to as an adjacent selector. It will select only the element that is immediately preceded by the former element. In this case, only the first paragraph after each ul will have red text. */
+ul + p {
+    color: red;
+ }
+
+/* The difference between the standard X Y and X > Y is that the latter will only select direct children. For example, consider the following markup.
+ */
+ div#container > ul {
+    border: 1px solid black;
+  }
+
+/* This sibling combinator is similar to X + Y, however, it's less strict. While an adjacent selector (ul + p) will only select the first element that is immediately preceded by the former selector, this one is more generalized. It will select, referring to our example above, any p elements, as long as they follow a ul. */
+
+  ul ~ p {
+    color: red;
+ }
+
+ /* Referred to as an attributes selector, in our example above, this will only select the anchor tags that have a title attribute. Anchor tags which do not will not receive this particular styling. But, what if you need to be more specific? */
+ a[title] {
+    color: green;
+ }
+
+ /* The snippet above will style all anchor tags which link to https://net.tutsplus.com; they'll receive our branded green color. All other anchor tags will remain unaffected. */
+ a[href="https://net.tutsplus.com"] {
+    color: #1f6053; /* nettuts green */
+  }
+
+/*he star designates that the proceeding value must appear somewhere in the attribute's value. That way, this covers nettuts.com, net.tutsplus.com, and even tutsplus.com.  */
+  a[href*="tuts"] {
+    color: #1f6053; /* nettuts green */
+  }
+
+  /* Ever wonder how some websites are able to display a little icon next to the links which are external? I'm sure you've seen these before; they're nice reminders that the link will direct you to an entirely different website. */
+  a[href^="http"] {
+    background: url(path/to/external/icon.png) no-repeat;
+    padding-left: 10px;
+ }
+
+/* Again, we use a regular expressions symbol, $, to refer to the end of a string. In this case, we're searching for all anchors which link to an image -- or at least a url that ends with .jpg. Keep in mind that this certainly won't work for gifs and pngs. */
+
+ a[href$=".jpg"] {
+    color: red;
+ }
+
+/* What if we added our own data-filetype attribute to each anchor that links to an image? */
+ a[data-filetype="image"] {
+    color: red;
+ }
+ <a href="path/to/image.jpg" data-filetype="image"> Image Link </a>
+ a[data-filetype="image"] {
+    color: red;
+ }
+
+ /* We can use pseudo elements (designated by ::) to style fragments of an element, such as the first line, or the first letter. Keep in mind that these must be applied to block level elements in order to take effect. */
+
+ p::first-line {
+    font-weight: bold;
+    font-size: 1.2em;
+ }
+/* Similarly, the ::first-line pseudo element will, as expected, style the first line of the element only. */
+ p::first-line {
+    font-weight: bold;
+    font-size: 1.2em;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
