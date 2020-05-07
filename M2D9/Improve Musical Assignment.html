@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<!--
+ASSIGNMENT RULES
+- The solution must be pushed to the repository and be available for the tutors by the end of the day
+- You can ask for tutor's help
+- You can google / use StackOverflow BUT we suggest you to use just the material provided
+- To test the page, just open it with your default browser.
+- Use Bootstrap4 classes to render the page.
+- Use correctly containers and rows in order to have a great display
+ASSIGNMENT TOPIC 
+You are creating a website to showcase your favourite albums.
+In this page you'd like to have a short bio of yourself, the top albums of your life, 
+the worst album you ever listen to and everything related to the music you love.
+IMPORTANT:
+Start from the previous assignment
+NOTE:
+Most of the time, even the most expert of designers, need inspiration.
+Spend 30 minutes surfing the web and searching for the way of rapresenting album that you like the most.
+Could be the Amazon way, the Spotity or Apple music way or some other blog out there.
+-->
+
+<html>
+    <head>
+        <!-- IMPORT ALL THE BOOSTRAP RELATED CSS & SCRIPTS-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+        <style>
+        .tooltip {
+            position: relative;
+            z-index: 2;
+            
+        }
+        .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            /* position tooltip */
+            position: absolute;
+            z-index: 1;
+            top: -5px;
+            left: 105%;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+
+        </style>
+    </head>
+    <body>
+      <!-- EXERCISE 1
+        Use the specific bootstrap component to implement a Breadcrumb
+        -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="favalbm">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="albmReview">Favourite Albums</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="albmReview" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+          </nav>
+
+          <!-- breadcrumb -->
+          
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">             
+              <li class="breadcrumb-item active" aria-current="page">Home</li>
+              <li class="breadcrumb-item"><a href="favalbm">Favourite Albums</a></li>
+              <li class="breadcrumb-item"><a href="albmReview">Album Review</a></li>
+            </ol>
+          </nav>
+
+          <!-- favourite Albums -->
+          
+        
+        <!-- EXERCISE 2
+            Create a Jumbotron section with a quick explanation / image of the website
+        -->
+
+        <!-- Jumbotron -->
+        <div class="jumbotron text-center">
+
+            <!-- Title -->
+            <h4 class="card-title h4 pb-2 text-capitalize"><strong >My favourite album</strong></h4>
+  
+            <!-- Card image -->
+            <div class="view overlay my-4">
+            <img src="Hillsong.jpg" class="img-fluid" alt="">
+            <a href="#">
+                <div class="mask rgba-white-slight"></div>
+            </a>
+        </div>
+  
+        <h5 class="indigo-text h5 mb-4">Music</h5>
+  
+            <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+  
+             <!-- Linkedin -->
+            <!-- <a class="fa-lg p-2 m-2 li-ic"><i class="fab fa-linkedin-in grey-text"></i></a> -->
+            <!-- Twitter -->
+            <!-- <a class="fa-lg p-2 m-2 tw-ic"><i class="fab fa-twitter grey-text"></i></a> -->
+            <!-- Dribbble -->
+            <!-- <a class="fa-lg p-2 m-2 fb-ic"><i class="fab fa-facebook-f grey-text"></i></a> -->
+                
+  </div>
+  <!-- Jumbotron -->
+
+        <!-- EXERCISE 3
+            Foreach album in the favorite list, place the genre inside a badge
+        -->                        
+             
+               <div class="container" id="display">
+                 <div class="row  d-md-3 d-lg-6">
+                   <div class="col-sm-6 col-md-4 col-lg-2">
+                     <div class="card mb-4 box-shadow card1">
+                       <img class="card-img-top h-66 img1" src="feeeling.jpg" alt="Card image cap" >
+                       <div>
+                        <div class="tooltip">Hover over me
+                            <span class="tooltiptext">Tooltip text</span>
+                          </div>
+                           <p>Classical music is rooted in Western culture. It includes both religious and secular music.</p>                           
+                           <p class="tooltip"> Genre <span class="tooltiptext">Tooltip text</span> <span class="w3-badge w3-green">1</span></p>
+                       </div>
+                     </div>                    
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 col-lg-2">
+                        <div class="card mb-4 box-shadow card1">
+                          <img class="card-img-top h-66 img1" src="feeeling.jpg" alt="Card image cap" >
+                          <div class="genre">
+                              <p>Classical music is rooted in Western culture. It includes both religious and secular music.</p>                           
+                              <p>Genre <span class="w3-badge w3-green">2</span></p>
+                          </div>
+                        </div>                    
+                    </div>
+                    
+                    <div class="col-sm-6 col-md-4 col-lg-2">
+                        <div class="card mb-4 box-shadow card1">
+                          <img class="card-img-top h-66 img1" src="feeeling.jpg" alt="Card image cap" >
+                          <div class="genre">
+                              <p>Classical music is rooted in Western culture. It includes both religious and secular music.</p>                           
+                              <p>Genre <span class="w3-badge w3-green">3</span></p>
+                          </div>
+                        </div>                    
+                    </div> 
+
+                    <div class="col-sm-6 col-md-4 col-lg-2">
+                        <div class="card mb-4 box-shadow card1">
+                          <img class="card-img-top h-66 img1" src="feeeling.jpg" alt="Card image cap" >
+                          <div class="genre">
+                              <p>Classical music is rooted in Western culture. It includes both religious and secular music.</p>                           
+                              <p>Genre <span class="w3-badge w3-green">3</span></p>
+                          </div>
+                        </div>                    
+                       </div> 
+
+                       <div class="col-sm-6 col-md-4 col-lg-2">
+                        <div class="card mb-4 box-shadow card1">
+                          <img class="card-img-top h-66 img1" src="feeeling.jpg" alt="Card image cap" >
+                          <div class="genre">
+                              <p>Classical music is rooted in Western culture. It includes both religious and secular music.</p>                           
+                              <p>Genre <span class="w3-badge w3-green">3</span></p>
+                          </div>
+                        </div>                    
+                       </div> 
+
+                       <div class="col-sm-6 col-md-4 col-lg-2">
+                        <div class="card mb-4 box-shadow card1">
+                          <img class="card-img-top h-66 img1" src="feeeling.jpg" alt="Card image cap" >
+                          <div class="genre">
+                              <p>Classical music is rooted in Western culture. It includes both religious and secular music.</p>                           
+                              <p>Genre <span class="w3-badge w3-green">4</span></p>
+                          </div>
+                        </div>                    
+                       </div> 
+                    </div>
+                
+                 <hr>
+
+
+        <!-- EXERCISE 4
+            Foreach album in the favorite list, use the Bootstrap Card to contain it.
+            Use card layouts to format it in the best and more compatible way.
+        -->
+
+        <!-- EXERCISE 5
+            Place the tracklist inside a Bootstrap table.
+            The row column must be alternate.
+            Use one column for the track order, one of the title and one for the length.
+            (If you want, you can also add extra columns)
+        -->
+        <h3 class="mt-5">Tracklist</h3>
+
+        <table class="table" id="myTable">
+            <thead>
+              <tr>
+                <th scope="col">S.no</th>
+                <th scope="col">Name</th>
+                <th scope="col">Length</th>
+                <th scope="col">Remove</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>13</td>
+                <td><button onclick="removeElement()" type="button" >Delete</button></td>
+              </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>13</td>
+                <td><button onclick="removeElement()" type="button" >Delete</button></td>
+              </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>13</td>
+                <td><button onclick="removeElement()" type="button" >Delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <div class="container">
+              <div class="row">
+                  <div class="col"><button onclick="" type="button" data-toggle="modal" data-target="#newModal" >Add</button></div>
+              </div>
+            </div>
+            <div></div>
+            <hr>
+            <hr>
+            <hr>
+                    
+
+        <!-- EXERCISE 6
+            Add a DELETE bootstrap button on each row of the tracklist.
+            Clicking on the button the row must disappear
+        -->
+
+        <!-- EXERCISE 7
+            Add a "Contact Me" form in the footer.
+            The "Contact Me" form has 2 fields:
+            - Email
+            - Text of the message
+            Use the correct Bootstrap styles for styling the buttons
+        -->
+
+        <!-- EXERCISE 8 
+            Add to the footer an extra column with the same links of the top nav.
+        -->
+        <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
+            <div class="row">
+                <div class="col3">                                             
+                            
+                            <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Contact Us
+                    </button>
+            
+            <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Email address</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Password</label>
+                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                        </div>                      
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                     </div>            
+                </div>
+                <div class="col9">       
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                     </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" href="#">Disabled</a>
+                            </li>
+                            <li class="nav-item dropup">
+                                <a class="nav-link dropdown-toggle" href="https://getbootstrap.com" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropup</a>
+                                <div class="dropdown-menu" aria-labelledby="dropdown10">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>              
+                </div>
+            </div>   
+        </nav>
+
+
+        
+
+         <!-- EXERCISE 9
+            Add a button "Add Track" under the track list the album
+        -->
+
+        <!-- EXERCISE 10
+            On "Add Track" button, open a new modal.
+            The modal shall contain a form with:
+            - Track number
+            - Track name
+            - Track lenght
+            - Track featuring
+            - Live Track (checkbox)
+            The fields should be inside an Input Group and divided in 2 columns.
+        -->
+
+        <div class="modal fade" id="newModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <form>
+                            <div class="form-group">
+                                <label for="InputTNo">Track Number</label>
+                                <input type="number" class="form-control" id="trackNo" placeholder=" track no">
+                                
+                            </div>
+                            <div class="form-group">
+                                <label for="InputName">Name</label>
+                                <input type="text" class="form-control" id="Name" placeholder="Name">                                
+                            </div>
+                            <label for="genre">Genre: </label>
+                                <select id="genre" name="genre">
+                                    <option value="drama" selected>Drama</option>
+                                    <option value="action">Action</option>
+                                    <option value="comedy">Comedy</option>
+                                    <option value="scifi">Sci Fi</option>
+                                    <option value="thriller">Thriller</option>
+                                </select><br>
+                                <label for="description">Description:</label><br>
+                                <textarea id="description" name="description"></textarea>
+                              <br>
+                              <label for="rating">Rating: </label>
+                                1 <input id="rating" name="rating" type="range" max="5" min="1"> 5<br>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            </div>                      
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="submitButton">Save changes</button>
+                        
+                    </div>
+                </div>
+            </div>
+
+        <!-- EXERCISE 11
+            Add 2 bootstrap buttons at the bottom of the modal window:
+            - Close => clear the fields and close the modal
+            - Add => Add the track to the list of tracks in the main page and display an alert success message 
+            https://getbootstrap.com/docs/4.3/components/alerts/
+            [EXTRA] Make the message disappear after 5 seconds
+            https://www.w3schools.com/jsref/met_win_settimeout.asp
+        -->
+  
+        <!-- EXERCISE 12
+            All the field (except for Feat. and Live Track) are required fields and requires validation.
+            If the user clicks on the Add button and some fields are empty, a warning alert must be show
+        -->
+
+        <!-- EXERCISE 13
+            For each "Album cover" in your page, add a tooltip with the title
+        -->
+
+        <!-- EXERCISE 14
+            Update the header and footer links using scrollspy to render a smooth transition to the parts of the document.
+        -->
+
+         <!-- EXERCISE 15
+            Add a Album Carousel with controls to display the top 10 albums
+        -->
+
+        <!-- EXERCISE 16
+            Make every section of the page "collapsable" if the user clicks on the section title
+        -->
+        <script>
+            function removeElement() {
+    // Removes an element from the document
+            document.getElementById("rowRemove").remove();
+    }
+
+    window.onload = init;
+  
+  function init() {
+    var submitButton = document.getElementById("submitButton");
+    submitButton.onclick = getMovieData;
+  }
+  /* http://archive.oreilly.com/oreillyschool/courses/javascript1/Forms.html */
+
+  function getMovieData() {
+    var Nameinput = document.getElementById("Name");
+    var Name = Nameinput.value;
+
+    var tracnInput = document.getElementById("trackNo");
+    var trackNo = parseInt(tracnInput.value);
+
+    var genreSelect = document.getElementById("genre");
+    var genreOption = genreSelect.options[genreSelect.selectedIndex];
+    var genre = genreOption.value;
+
+    var descriptionTextarea = document.getElementById("description");
+    var description = descriptionTextarea.value;
+
+    if (Name == null || Name == "") {
+      alert("Please enter a name");
+      return;
+    }
+    else {
+        var table = document.getElementById("myTable");
+        var row = table.insertRow(4)
+        var cell1 = row.insertCell(0)
+        var cell2 = row.insertCell(1)
+        var cell3 = row.insertCell(2)
+        cell1.innerHTML = trackNo
+        cell2.innerHTML = Name
+        cell3.innerHTML = genre
+      /* var movie = new Movie(trackNo, Name, genre);
+      movieList.push(movie);
+      var movies = document.getElementById("movies");
+      movies.innerHTML = "Added " + movie.title + " to the list."; */
+    }
+  } 
+        </script>
+    </body>
+</html>
