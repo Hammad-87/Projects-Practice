@@ -1,0 +1,209 @@
+*{
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    /* font-size: 1vw; */    
+}
+
+.container{
+padding: 0px 200px 0px 300px;
+
+}
+img{    
+    /* width: 200px; */
+    height: 60px;
+    text-align: center;
+    max-width: 100%;
+}
+
+.btn-fb{   
+    margin-bottom: 1.5%;
+    background-color: #4169E1;
+    color: white;
+    /* padding-left: 110px;
+    padding-right: 110px; */
+    width: 100%;
+    min-width: 50px;  
+    max-width: 700px;
+    height: 50px; 
+    border-radius: 40px;    
+    overflow:hidden;
+
+}
+
+.btn-google{   
+    margin-bottom: 1%;
+    background-color: black;
+    color: white;
+    /* padding-left: 110px;
+    padding-right: 110px; */
+    width: 100%;
+    min-width: 50px;  
+    max-width: 700px;
+    height: 50px; 
+    border-radius: 40px;    
+    overflow:hidden;    
+}
+.btn-submit{
+    background-color: green;
+    color: white;
+    border-radius: 40px;
+    height: 100%;
+    width: 100%;
+    min-width: 50px;  
+    max-width: 150px;
+}
+.btn-signUp{
+    margin-bottom: 1.5%;
+    background-color:transparent;
+    color: gray;
+    /* padding-left: 110px;
+    padding-right: 110px; */
+    width: 100%;
+    min-width: 50px;  
+    max-width: 700px;
+    height: 50px; 
+    border-radius: 40px;    
+    overflow:hidden;
+    border: 1px solid grey;
+}
+.btn-fb:hover{
+    background-color: #1E90FF;
+    color: white;
+}
+.btn-google:hover{
+    background-color: #323232;
+    color: white;
+}
+
+.btn-signUp:hover{
+    background-color: grey;
+    color: white;
+}
+
+hr.hr-text {
+    position: relative;
+      border: none;
+      height: 1px;
+      background: #E0E0E0;
+      /* margin-left: 265px;
+      margin-right: 265px; */
+  }
+  
+  hr.hr-text::before {
+      content: attr(data-content);
+      display: inline-block;
+      background: #fff;
+      font-weight: bold;
+      font-size: 0.85rem;
+      color: black;
+      border-radius: 30rem;
+      padding: 0.2rem 2rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+
+ /* Check Box */
+ .checkbox {
+    width: 100%;
+    margin: 15px auto;
+    position: relative;
+    display: block;
+}
+
+.checkbox input[type="checkbox"] {
+    width: auto;
+    opacity: 0.00000001;
+    position: absolute;
+    left: 0;
+    margin-left: -20px;
+}
+.checkbox label {
+    position: relative;
+}
+.checkbox label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 4px;
+    width: 22px;
+    height: 22px;
+    transition: transform 0.28s ease;
+    border-radius: 3px;
+    border: 2px solid #7bbe72;
+}
+.checkbox label:after {
+  content: '';
+    display: block;
+    width: 10px;
+    height: 5px;
+    border-bottom: 2px solid white; /* Tick Mark */
+    border-left: 2px solid white; /* Tick Mark */
+    -webkit-transform: rotate(-45deg) scale(0);
+    transform: rotate(-45deg) scale(0);
+    transition: transform ease 0.25s;
+    will-change: transform;
+    position: absolute;
+    top: 12px;
+    left: 10px;
+}
+.checkbox input[type="checkbox"]:checked ~ label::before {    
+    background-color: #7bbe72;
+    
+}
+
+.checkbox input[type="checkbox"]:checked ~ label::after {
+    -webkit-transform: rotate(-45deg) scale(1);
+    transform: rotate(-45deg) scale(1);
+}
+
+.checkbox label {
+    min-height: 34px;
+    display: block;
+    padding-left: 40px;
+    margin-bottom: 0;
+    font-weight: normal;
+    cursor: pointer;    
+}
+
+.checkbox label span {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.checkbox input[type="checkbox"]:focus + label::before {
+    outline: 0;
+}
+  
+  /* Media Queries*/
+  @media screen and (max-width: 1200px) {
+    /* #primary { width:67%; }
+    #secondary { width:30%; margin-left:3%;} */  
+    .container{
+        padding: 0px 200px 0px 200px;
+        
+        }
+}
+
+@media screen and (max-width: 982px) {
+    /* #primary { width:67%; }
+    #secondary { width:30%; margin-left:3%;} */  
+    .container{
+        padding: 0px 100px 0px 100px;
+        
+        }
+}
+
+/* Media Queries: Tabled Portrait */
+@media screen and (max-width: 762px) {
+    /* #primary { width:100%; }
+    #secondary { width:100%; margin:0; border:none; } */
+    .container{
+        padding: 0px 10px 0px 10px;
+        
+        }
+}
