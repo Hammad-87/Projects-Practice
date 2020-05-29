@@ -1,0 +1,75 @@
+body,
+nav {
+  margin: 0;
+  background-color: #221f1f;
+  color: white;
+}
+.dropdown-menu,.dropdown-item {
+  background-color: #221f1f;
+  color: white;
+}
+
+.card {
+
+position: relative;
+width: 100%;
+height: 100%;
+cursor: pointer;
+border: none;
+/* transform-style: preserve-3d;
+transform-origin: center right;
+transition: transform 0.6s;
+transform: translateX(-100%) rotateY(-180deg);
+animation: animate 5s forwards; */
+height: calc(100% - 10px);
+margin-bottom: 10px;
+
+}
+
+/*  @keyframes animate {
+  0% {
+    opacity: 0;
+    z-index: 0;
+  }
+  99% {
+    opacity: 1;
+    z-index: 0;
+  }
+  100% {
+    z-index: 1;
+  }
+} */
+
+.card-body{
+  background-color: #221f1f;
+  color: white;
+}
+
+/* img.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
+} */
+
+.card:hover{
+ transform: scale(1.1);
+ position: relative;
+/* width: 100%;
+height: 100%;
+cursor: pointer; */
+transform-style: preserve-3d;
+transform-origin: center right;
+transition: transform 1s;
+/* transform: translateX(-100%) rotateY(-180deg); */
+/* animation: animate 5s forwards; */
+/* height: calc(100% - 10px);
+margin-bottom: 10px; */
+}
+
+.card img{
+object-fit: cover;            
+  }
+
+.form-control:focus {
+  border: 1px solid #ced4da !important;
+  outline: none !important;
+  box-shadow: none !important; 
+}
